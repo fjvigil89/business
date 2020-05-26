@@ -21,16 +21,16 @@ class UserSeeder extends Seeder
 
         $password = Hash::make('12345678');
 
-        User::create([
+        $user = User::create([
             'name'              => 'admin',
             'email'             => 'admin@gmail.com',
             'email_verified_at' => date('Y-m-d H:m:s'),
             'password'          => $password,            
-            'activo'            => 1,            
-            //'role_id'           => 1,            
+            'activo'            => 1,                                   
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
         ]);
+        $user->roles()->attach(App\Role::where('name', 'admin')->first());
          
     }
 }
