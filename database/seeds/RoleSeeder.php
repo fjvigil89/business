@@ -1,5 +1,6 @@
 <?php
 
+use App\Role;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 use Illuminate\Support\Facades\DB;
@@ -12,17 +13,44 @@ class RoleSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {       
         $faker = Faker::create();
-
-        //for ($i=0; $i < 4; ) {
-            DB::table('roles')->insert(array(
-                'name'              =>$faker->randomElement($array = array ('user','admin','cajero','bar','restaurant')),
-                'activo'            => $faker->boolean,   
-                'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
-                'created_at'        => date('Y-m-d H:m:s'),
-                'updated_at'        => date('Y-m-d H:m:s')
-            ));
-        //}
+        
+         Role::create([
+            'name'              =>'user',
+            'activo'            => $faker->boolean,   
+            'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')          
+        ]);
+         Role::create([
+            'name'              => 'admin',
+            'activo'            => $faker->boolean,   
+            'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')          
+        ]);
+         Role::create([
+            'name'              =>'cajero',
+            'activo'            => $faker->boolean,   
+            'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')          
+        ]);
+         Role::create([
+            'name'              =>'bar',
+            'activo'            => $faker->boolean,   
+            'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')          
+        ]);
+         Role::create([
+            'name'              =>'restaurant',
+            'activo'            => $faker->boolean,   
+            'description'       => $faker->sentence($nbWords = 6, $variableNbWords = true),
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')          
+        ]);
+        
     }
 }

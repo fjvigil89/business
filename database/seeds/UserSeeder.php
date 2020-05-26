@@ -31,20 +31,6 @@ class UserSeeder extends Seeder
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
         ]);
-
-        
-       /* for ($i=0; $i < 9; )  {
-	        DB::table('users')->insert(array(
-                'name'              =>$faker->name,
-                'email'             =>$faker->email,
-                'email_verified_at' => date('Y-m-d H:m:s'),
-                'password'          => $faker->password, 
-                'activo'            => $faker->boolean,
-                //'role_id'           => ++$i, //$faker->randomElement($array = array ('user','admin','cajero','bar','restaurant')),
-                'created_at'        => date('Y-m-d H:m:s'),
-                'updated_at'        => date('Y-m-d H:m:s')
-            ));
-        }*/
          
     }
 }
